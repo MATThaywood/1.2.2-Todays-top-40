@@ -1,76 +1,49 @@
 
 /**
- * Maintain a collection of song, movie, and book titles.
- * 
- * @author ckinnard
- * @version 3/5/16
+ * Write a description of class FavoritesMediaLib here.
+ *
+ * @author (Matthew haywood)
+ * @version (a version number or a date)
  */
 public class FavoritesMediaLib
 {
     public static void main()
     {
-        String songInfo =  MediaFile.readString();
-        // System.out.println(songInfo);
-
-        /* while loop solution 
-        int index = songInfo.indexOf("|");
-        while( index > 0) {
-            // a delimiter was found, so get the next token and print
-            String token = songInfo.substring(0, index);
-            System.out.println(token);
-    
-            // generate a new string starting at the next token
-            songInfo = songInfo.substring(index + 1);
-            // get the location of the next delimiter
-            index = songInfo.indexOf("|");
+        String songInfo = MediaFile.readString();
+        int start = 0;
+        int end = songInfo.indexOf("|");
+        String name = "";
+        String rating = "";
+        while (songInfo.length() > end){ 
+        //System.out.println(start);
+        //System.out.println(end);
+        if (end == -1){
+            break;}
+        name = songInfo.substring(start,end);
+        start = end+1;
+        //System.out.println(start);
+        end = songInfo.indexOf("|", start+1);
+        //System.out.println("Final update of end: "+ end);
+        rating = songInfo.substring(start,end);
+        start = end+1;
+        //System.out.println(start);
+        end = songInfo.indexOf("|", start+1);
+        //System.out.println("Final update of end: "+ end);
+        String num = "10";
+        if(Integer.valueOf(rating) > 7){
+        System.out.println(name + " " + rating);
         }
-         */
-
-        /* for loop solution:
-         * 
-         * Since the algorithm above modidifes songInfo,
-         * only one algorithm will work at a time
-
-        for(int i = 1; i <= 100; i++) { // also: for(int i = 0; i < 100; i++)
-
-            // get the location of the next delimiter
-            int index = songInfo.indexOf("|");
-            if (index > 0) {
-                // a delimiter was found, so get the next token and print
-                String token = songInfo.substring(0, index);
-                System.out.println(token);
-        
-                // generate a new string starting at the next token
-                songInfo = songInfo.substring(index + 1);
-            }
-        }
-         */
-
-        System.out.println("My Favorite Songs");
-        System.out.println("-----------------");
-        int index = songInfo.indexOf("|");
-        while( index > 0) {
-            // a delimiter for a title was found
-            String title = songInfo.substring(0, index);
-
-            // generate a new string starting at songs rating
-            songInfo = songInfo.substring(index + 1);
-            // get the rating string 
-            index = songInfo.indexOf("|");
-            String ratingStr = songInfo.substring(0, index);
-
-            // convert to a integer
-            int rating = Integer.valueOf(ratingStr);
-
-            if (rating >= 8)
-            {           
-                System.out.println(title + "(" + rating + ")");
-            }
-            // generate a new string starting at songs rating
-            songInfo = songInfo.substring(index + 1);
-            // get the rating string 
-            index = songInfo.indexOf("|");
-        }
-
     }
+    }
+    //int highestRating = 7;
+    
+      // if(songInfo.Rating() >= highestRating){
+           //System.out.println(songInfo);
+      //  }
+           
+            
+            
+            
+            
+    
 }

@@ -1,127 +1,80 @@
-
-/**
- * Maintain a collection of song, movie, and book titles.
- * 
- * @author ckinnard
- * @version 3/5/16
+ /**
+ * Write a description of class ArrayMediaLib here.
+ *
+ * @author (matt h)
+ * @version (first edition lol)
  */
 public class ArrayMediaLib
-
-/**
-This is an added comment to show a change in the file.
-This is part of a GitHub test. 
-This is not for just checking answers
- */
 {
-    public static void main(String[] args)
-=======
-{
-    public static void main()
-
-    {       
-        /******* Part 2 *******/
-        System.out.println("/******* Part 2 ******/");
-        String[] sharingFriends = {"Jamal",
-                "Emily",
-                "Destiny",
-               // "Mateo",
-                "Sofia"  // notice no comma
-            };
-
-        for (int i = 0; i < sharingFriends.length; i++)
-        {
-            System.out.println(sharingFriends[i]);
-        }
-
-        /******* Part 3 *******/
-        System.out.println("/******* Part 3 ******/");
-        int total = 0;
-        int[] daysBtwnPurchase = {2, 5, 1, 2, 4, 2, 1, 3};
-
-        for (int d: daysBtwnPurchase) {
-            total = total + d;
-        }
-        System.out.println("Average purhcase time is " + (double)total/daysBtwnPurchase.length);
-       
-        /******* Part 4 *******/
-        System.out.println("/******* Part 4 ******/");
-
-        Song[] topTenSongs = {
-                new Song("The Twist"),
-                new Song("Smooth"),
-                new Song("Mack the Knife"),
-                new Song("How Do I Live"),
-                new Song("Party Rock Anthem"),
-                new Song("I Gotta Feeling"),
-                new Song("Macarena"),
-                new Song("Physical"),
-                new Song("You Light Up My Life"),
-                new Song("Hey Jude")
-            };
-        // ---------------------------------------------display titles with for-each loop 
-        for (Song s: topTenSongs)
-        {
-            System.out.println(s.getTitle());
-        }
-
-        // --------attempt to change object reference (but this does not change them!)
-        System.out.println("--Change Titles--");
-        System.out.println("—BEFORE--");
-        for (Song changeSong: topTenSongs) {
-            changeSong = new Song("test");
-            System.out.println(changeSong.getTitle());
-        }
-        System.out.println("—AFTER--");
-        for (Song showSong : topTenSongs) {
-            System.out.println(showSong.getTitle());
-        }
-
-        // --------------change object references using standard for loop (which does change them)
-        System.out.println("--Really Change Titles--");
-        for(int i = 0; i < topTenSongs.length ; i++) {
-            // commented out after testing so the rest of the code works
-            //topTenSongs[i] = new Song("test");
-        }
-        for (Song showSong : topTenSongs) {
-            System.out.println(showSong.getTitle());
-        }
-
-        // ------------------------------------------------- every third song gets a discount
-        System.out.println("--Discount Prices--");
-        int count = 1;
-        for (Song song : topTenSongs) {
-            if ((count % 3) == 0) {
-                song.setPrice(.99); // later user song.setPrice(1.99);
-            }
-            else {
-                song.setPrice(1.29); 
-            }
-            count++;
-        }
-        // confirm by showing all prices:
-        for (Song showSong : topTenSongs) {
-            System.out.println(showSong.getTitle()+ " costs " + showSong.getPrice());
-        }
-
-        /******* Part 5 ******/
-        System.out.println("/******* Part 5 ******/");          
-        System.out.println("--Top 5 Song Titles--");
-        for(int i = 0; i < 5 ; i++) {
-            System.out.println(topTenSongs[i].getTitle());
-        }
-        System.out.println("--Ever other Song Title FOR--");
-        for(int i = 0; i < topTenSongs.length ; i=i+2) {
-            System.out.println(topTenSongs[i].getTitle());
-        }
-        System.out.println("--Ever other Song Title FOR-EACH --");
-        int evens = 0;
-        for (Song song : topTenSongs) {
-            if ((evens % 2) == 0) {
-                System.out.println(song.getTitle());
-            }
-            evens++;
-        }
-
+    private String Song;
+    public static void main(){
+    String[] sharingFriends = null;
+    sharingFriends = new String[5];
+    sharingFriends[0] = "tyler";
+    sharingFriends[1] = "jamir";
+    sharingFriends[2] = "alec";
+    sharingFriends[3] = "marc";
+    sharingFriends[4] = "henry";
+    for (int i = 0; i  < 5; i++)
+    {
+        System.out.println(sharingFriends[i]);
     }
+    int [] daysBetweenPurchase = {2, 5, 1, 2, 4, 2, 1, 3};
+    int total = 0;
+    for(int val : daysBetweenPurchase)
+    {
+        total = total + val;
+    }
+    System.out.println(total / daysBetweenPurchase.length);
+    Songs song1 = new Songs();
+    Songs[] topTenSongs = {new Songs("uptown funk"),new Songs("party rock anthem"),new Songs("hey jude"),new Songs("despacito"),new Songs("Bohemian Rhapsody"),new Songs("macarena"),new Songs("all about that bass"),new Songs("somebody that i used to know"),new Songs("happy"),new Songs("closer")};
+    for (Songs s: topTenSongs)
+    {
+        System.out.println(s.getTitle());
+    }
+    System.out.println("-BEFORE--");
+    for (Songs changeSong : topTenSongs) {
+    changeSong = new Songs("test");
+    System.out.println(changeSong.getTitle());
+    }   
+    System.out.println("-AFTER--");
+    for (Songs showSong : topTenSongs) {
+    System.out.println(showSong.getTitle());
+    }
+    for (int i = 0; i < 10; i++)
+    {
+        topTenSongs[i] = new Songs("test");
+    }
+    for (Songs changeSong: topTenSongs)
+    {
+        changeSong.setPrice(1.29);
+        System.out.println(changeSong.getPrice());
+        
+    }
+         for (int i = 0; i < topTenSongs.length; i++){
+             if (i % 3 == 0) {
+                 topTenSongs[i].setPrice(.99);
+                }
+             System.out.println(topTenSongs[i].getPrice());
+}
+                  
+   } 
 }
 
+   
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+   
+    
+  
+    

@@ -1,115 +1,117 @@
 
 /**
- * Maintain a collection of song, movie, and book titles.
- * 
- * @author ckinnard
- * @version 3/5/16
+ * we are making a library for probably media stuff
+ *
+ * @author (Matthew Haywood)
+ * @version (version 1.0.0, 8/19/2019)
  */
-public class MediaLib
-{
+public class MediaLib{
+    
     public static void main()
-    {
-        double totalCost = 0.0;
-        double totalRating = 0;
-        int numSongs = 0;
-        double aveCost;
-        double aveRating;
-
-        System.out.println("Welcome to your Media Library");
-        // according to Billboard's greatest songs...
-        Song song1 =  new Song("The Twist", 1.29, 10);
-        numSongs = numSongs + 1;
-        totalCost = totalCost + song1.getPrice();
-        totalRating = totalRating + song1.getRating();
+{
+    
+        System.out.println ("Welcome to your Media Library, the one stop spot for memes");
+        Songs song1 = new Songs();
+        System.out.println(song1);
+        song1.setTitle("Howard the Alien ten hour remix");
+        System.out.println(song1.getTitle());
+        song1.setRating(10);
+        System.out.println("this song scored a " + song1.getRating() + " on the meme charts");
+        song1.setPrice(10.99);
+        System.out.println(song1.getPrice() + " plus shipping and handiling");
+        
+        
+        System.out.println("");
+        System.out.println("");
+        
+        
+        Songs song2 = new Songs();
+        System.out.println(song2);
+        song2.setTitle("ocean man");
+        System.out.println(song2.getTitle());
+        song2.setRating(10);
+        System.out.println("this song scored a " + song2.getRating() + "on the meme charts");
+        song2.setPrice(9.99);
+        System.out.println(song2.getPrice() + " plus shipping and handiling");
+        
+        System.out.println("");
+        System.out.println("");
+        
+        Songs song3 = new Songs();
+        System.out.print(song3);
+        song3.setTitle("We are Number One");
+        System.out.println(song3.getTitle());
+        song3.setRating(9);
+        System.out.println("this song scored a " + song3.getRating() + " on the meme scale");
+        song3.setPrice(29.99);
+        System.out.println(song3.getPrice() + "plus shipping and handling");
+        
+        System.out.println("");
+        System.out.println("");
+        
+        Songs song4 = new Songs();
+        System.out.println(song4);
+        song4.setTitle("megalovania");
+        System.out.println(song4.getTitle());
+        song4.setRating(8);
+        System.out.println("this song scored a " + song4.getRating() + "on the meme charts");
+        song4.setPrice(100000000);
+        System.out.println(song4.getPrice() + "plus shipping and handling");
+        
+        System.out.println("");
+        System.out.println("");
+        
+        
+        Songs song5 = new Songs();
+        System.out.println(song5);
+        song5.setTitle("all star");
+        System.out.println(song5.getTitle());
+        song5.setRating(5);
+        System.out.println(" this song scored a " + song5.getRating() + "on the meme charts");
+        song5.setPrice(109281);
+        System.out.println(song5.getPrice() + "plus shipping and handling");
+        
+        System.out.println("");
+        System.out.println("");
+        
+        Songs song6 = new Songs();
+        System.out.println(song6);
+        song6.setTitle("cholcolate rain");
+        System.out.println(song6.getTitle());
+        song6.setRating(6);
+        System.out.println(" this song scored a " + song6.getRating() + "on the meme charts");
+        song6.setPrice(190);
+        System.out.println(song6.getPrice() + "plus shipping and handling");
+        
+        System.out.println("");
+        System.out.println("");
+        
+        Songs song7 = new Songs();
+        System.out.println(song7);
+        song7.setTitle("Take on me");
+        System.out.println(song7.getTitle());
+        song7.setRating(8);
+        System.out.println(" this song scored a " + song7.getRating() + "on the meme charts");
+        song7.setPrice(2350);
+        System.out.println(song7.getPrice() + "plus shipping and handling");
+        
+        System.out.println("");
+        System.out.println("");
+        
+        
+        
+        /*MediaFile.writeString(song1.getTitle() + "|" + song1.getRating() + song2.getTitle() + "|" + song2.getRating() 
+        + song3.getTitle() + "|" + song3.getRating() + song4.getTitle() + "|" + song4.getRating() + song5.getTitle() + "|" + song5.getRating()
+        + song6.getTitle() + "|" + song6.getRating() + song7.getTitle() + "|" + song7.getRating());*/
         MediaFile.writeString(song1.getTitle() + "|" + song1.getRating());
-
-        Song song2 =  new Song("Smooth", .99, 9);
-        numSongs = numSongs + 1;
-        totalCost = totalCost + song2.getPrice();
-        totalRating = totalRating + song2.getRating();
         MediaFile.writeString(song2.getTitle() + "|" + song2.getRating());
-
-        Song song3 =  new Song("Mack the Knife", 1.29, 8);
-        numSongs = numSongs + 1;
-        totalCost = totalCost + song3.getPrice();       
-        totalRating = totalRating + song3.getRating();
         MediaFile.writeString(song3.getTitle() + "|" + song3.getRating());
-
-        Song song4 =  new Song("How Do I Live", 99, 7);
-        numSongs = numSongs + 1;
-        totalCost = totalCost + song4.getPrice();
-        totalRating = totalRating + song4.getRating();
         MediaFile.writeString(song4.getTitle() + "|" + song4.getRating());
-
-        Song song5 =  new Song("Party Rock Anthem", 1.29, 6);
-        numSongs = numSongs + 1;
-        totalCost = totalCost + song5.getPrice();
-        totalRating = totalRating + song5.getRating();
         MediaFile.writeString(song5.getTitle() + "|" + song5.getRating());
-
-        Song song6 =  new Song("I Gotta Feeling", .99, 7);
-        numSongs = numSongs + 1;
-        totalCost = totalCost + song6.getPrice();
-        totalRating = totalRating + song6.getRating();
         MediaFile.writeString(song6.getTitle() + "|" + song6.getRating());
-
-        Song song7 =  new Song("Macarena", 1.29, 8);
-        numSongs = numSongs + 1;
-        totalCost = totalCost + song7.getPrice();
-        totalRating = totalRating + song7.getRating();
         MediaFile.writeString(song7.getTitle() + "|" + song7.getRating());
-
-        Song song8 =  new Song("Physical", .99, 9);
-        numSongs = numSongs + 1;
-        totalCost = totalCost + song8.getPrice();
-        totalRating = totalRating + song8.getRating();
-        MediaFile.writeString(song8.getTitle() + "|" + song8.getRating());
-
-        Song song9 =  new Song("You Light Up My Life", 1.29, 10);
-        numSongs = numSongs + 1;
-        totalCost = totalCost + song9.getPrice();
-        totalRating = totalRating + song9.getRating();
-        MediaFile.writeString(song9.getTitle() + "|" + song9.getRating());
-
-        Song song10 =  new Song("Hey Jude", .99, 9);
-        numSongs = numSongs + 1;
-        totalCost = totalCost + song10.getPrice();
-        totalRating = totalRating + song10.getRating();
-        MediaFile.writeString(song10.getTitle() + "|" + song10.getRating());
-
         MediaFile.saveAndClose();
-
-        String s =  MediaFile.readString();
-        while(s != null) {
-            System.out.println("FROM FILE" + s);
-            s =  MediaFile.readString();
-        }
-        /**** test code is commented out
-        double testVal = 109.41;
-        double testResult  = testVal / 10;
-        System.out.println("Testing Result:");
-        System.out.println(testResult);
-         *****/
-
-        System.out.println("Number of songs:");
-        System.out.println(numSongs);
-
-        System.out.println("Total cost:");
-        System.out.println(totalCost);
-
-        aveCost = totalCost / numSongs;
-        System.out.println("Average cost:");
-        System.out.println(aveCost);
-
-        aveRating = totalRating / numSongs;
-        System.out.println("Average rating:");
-        System.out.println(aveRating);
-
-        Movie movie1 = new Movie();
-        movie1.setTitle("Young Frankenstein");
-        System.out.println(movie1.getTitle());
-        movie1.setDuration(134);
-        movie1.showHoursMinutes();
-
+        
+       
     }
 }

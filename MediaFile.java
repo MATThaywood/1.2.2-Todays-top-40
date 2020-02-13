@@ -69,7 +69,6 @@ public class MediaFile
 
         try {
             out.write(s);
-            // out.newLine();
             out.write("|");
         }
         catch (Exception e) {
